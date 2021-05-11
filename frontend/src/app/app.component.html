@@ -1,0 +1,52 @@
+<nav class="navbar navbar-light bg-light">
+  <span class="navbar-brand mb-0 h1">Gestion de personas</span>
+</nav>
+<br>
+<div class="container mx-md-n5">
+  <div class="col-md-12 row">
+    <div class="col-md-6">
+      <div class="container">
+        <form #createForm="ngForm">
+          <div class="mb-3">
+            <label for="nombre" class="form-label">Nombre</label>
+            <input type="text" class="form-control"  [(ngModel)]="persona.nombre" maxlength="40" name="nombre" id="nombre" #nombreControl="ngModel"  required>
+            <label class="has-error" *ngIf=" nombreControl.touched && nombreControl.invalid ">Nombre no valido</label>
+          </div>
+          <div class="mb-3">
+            <label for="edad" class="form-label">edad</label>
+            <input type="text" class="form-control" [(ngModel)]="persona.edad" maxlength="2" min="18" name="edad" id="edad" #edadControl="ngModel" pattern="[0-9]*" required>
+            <label class="has-error" *ngIf=" edadControl.touched && edadControl.invalid ">Edad no valido</label>
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" [(ngModel)]="persona.correo" name="correo" id="email" #emailControl="ngModel" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required>
+            <label class="has-error" *ngIf="emailControl.errors &&(emailControl.touched || emailControl.dirty)">Email no valido</label>
+          </div>
+          <button (click)="validPerson(createForm)" class="btn btn-primary" [disabled]="createForm.invalid">Crear</button>
+        </form>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="container">
+        <table class="table">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Edad</th>
+              <th scope="col">Correo</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let p of listPersons; index as i">
+              <th scope="row">{{i+1}}</th>
+              <td>{{p.nombre}}</td>
+              <td>{{p.edad}}</td>
+              <td>{{p.correo}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
