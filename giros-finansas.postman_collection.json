@@ -1,0 +1,60 @@
+{
+	"info": {
+		"_postman_id": "9e74e898-0f3a-4d99-96fc-7f276dad2065",
+		"name": "giros-finansas",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "https://giros-finansas-1620762169843.azurewebsites.net/v1/persona",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://giros-finansas-1620762169843.azurewebsites.net/v1/persona",
+					"protocol": "https",
+					"host": [
+						"giros-finansas-1620762169843",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"v1",
+						"persona"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://giros-finansas-1620762169843.azurewebsites.net/v1/persona",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n        \"nombre\": \"Pedro\",\r\n        \"edad\": 23,\r\n        \"correo\": \"pedro8@gmail.com\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://giros-finansas-1620762169843.azurewebsites.net/v1/persona",
+					"protocol": "https",
+					"host": [
+						"giros-finansas-1620762169843",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"v1",
+						"persona"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
